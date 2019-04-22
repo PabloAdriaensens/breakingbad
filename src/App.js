@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import axios from 'axios';
 
-function Frase({frase}) {
+function Frase({ frase }) {
   return (
     <div className="frase">
       <h1>{frase.quote}</h1>
@@ -31,14 +31,16 @@ function App() {
       consultarApi();
     }, []
   )
-
-  console.log(frase);
+  //console.log(frase);
 
   return (
     <div className="contenedor">
       <Frase
         frase={frase}
       />
+      <button
+        onClick={consultarApi}
+      >Generar Nueva</button>
     </div>
   )
 }
