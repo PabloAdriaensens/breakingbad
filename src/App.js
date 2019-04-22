@@ -4,6 +4,15 @@ import React, {
 } from 'react';
 import axios from 'axios';
 
+function Frase({frase}) {
+  return (
+    <div className="frase">
+      <h1>{frase.quote}</h1>
+      <p>- {frase.author}</p>
+    </div>
+  )
+}
+
 function App() {
 
   const [frase, obtenerFrase] = useState({});
@@ -23,9 +32,15 @@ function App() {
     }, []
   )
 
-  console.log(frase); // frase = this.state;
+  console.log(frase);
 
-  return <p> hola </p>
+  return (
+    <div className="contenedor">
+      <Frase
+        frase={frase}
+      />
+    </div>
+  )
 }
 
 export default App;
